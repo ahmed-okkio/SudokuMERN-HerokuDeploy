@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+.button {
+    margin-top: auto;
+    margin-bottom: 0;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 2em;
+    letter-spacing: 1px;
+    background-color:rgb(81,211,164);
+    font-family: 'Didact Gothic', sans-serif;
+    font-weight: bold;
+    color:white;
+    cursor: pointer;
+    transition: 10ms ease-out ;
+    transition-property:background;
+  }
+  
+  .button:hover{
+    background-color:hsla(158, 89%, 63%, 0.89);
+  }
+  .button:active{
+    background-color:rgb(162, 250, 218)
+  }
+  
+  .login {
+    transition:0.3s ease-in-out;
+    opacity:0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   
+  }
+  .Inputs{
+    width: 100%;
+    min-height: calc(300px/ var(--size-divisor3));;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+  }
+  .signUpInputs{
+    width: 100%;
+    margin-bottom: 0 !important;
+    max-width: calc(420px/ var(--size-divisor3));
+    margin-bottom: 4em;
+    min-height: calc(300px/ var(--size-divisor3));;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+  }
+  
+  .login .loginContainer{
+    
+    padding: 60px;
+    margin-top:5vh;
+    width:60vw;
+    max-width: 380px;
+    min-height: calc(500px/ var(--size-divisor3));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:#42494e 59%;
+    box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
+  }
+  .login .loginContainer label {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    opacity: 1;
+    justify-self: center;
+    white-space: nowrap;
+    margin:auto;
+    margin-bottom: 1em;
+    display: block;
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 1;
+  }
+  .login .loginContainer input {
+    border: none;
+    outline: none;
+    margin-bottom: 5vh;
+    font-size: 19px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  .login .loginContainer .signUpInputs label {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    opacity: 0.5;
+    margin: 14px 0;
+    display: block;
+    font-size: 22px;
+    line-height: 1;
+  }
+  .login .loginContainer .Inputs label {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    opacity: 0.5;
+    margin: 14px 0;
+    display: block;
+    font-size: 22px;
+    line-height: 1;
+  }
+  .signupdiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-end ;
+    justify-content: flex-end;
+
+  }
+  .accountcheck{
+    margin:0px !important;
+    font-weight: normal;
+    font-size: 18px !important;
+    padding-top: 8px;
+    white-space: normal !important;
+  }
+  .signup{
+    font-family: "Roboto", sans-serif;
+    padding:0;
+    color:rgb(80, 205, 255);
+    border:0;
+    white-space: nowrap;
+    margin: 0;
+    margin-left:1%;
+    margin-top:7px;
+    cursor: pointer;
+
+  }
+  .signup:hover{
+    text-decoration: underline rgb(80, 205, 255);
+  }
+  .signup:active{
+    color:rgb(200, 240, 255);
+    
+  }
+  p{
+    color:rgb(255, 66, 52);
+    font-family: 'Didact Gothic', sans-serif;
+    font-weight: bold;
+
+  }
+  @media(min-width: 190px){
+    :root{
+        --size-divisor3:2.5
+    }
+    .login .loginContainer label {
+      font-size: 28px;
+    }
+}
+@media(min-width: 310px){
+    :root{
+        --size-divisor3:2.5
+        
+    }
+    
+}
+@media(min-width: 390px){
+    :root{
+        --size-divisor3:1.8
+    }
+    
+}
+
+@media(min-width: 490px){
+    :root{
+        --size-divisor3:1
+    }
+}

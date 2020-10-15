@@ -27,7 +27,7 @@ const loginRouter = require('./routes/login');
 app.use('/users', signupRouter);
 app.use('/users', loginRouter);
 if(process.env.NODE_ENV === 'production') {
-    app.use(express.static('./build'))
+    app.use(express.static('./client/build'))
 }
 app.listen(Port, () => console.log('Server Started on port: '+Port));
 

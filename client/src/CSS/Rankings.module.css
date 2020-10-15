@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+.rankings{
+    margin-top:0.5em;
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    transition:1s ease-in;
+}
+.boardsep{
+    display: block;
+    padding: 0;
+    margin:0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.boardsep .leftsep{
+    margin-left:calc(260px/ var(--size-divisor2));
+}
+.boardsep .rightsep{
+    margin-right:calc(550px/ var(--size-divisor2));
+}
+.boardsep li{
+    padding: 0;
+    margin:auto;
+    height:90vh;
+    border-left:calc(5px/var(--size-divisor2)) solid rgb(255, 255, 255);
+    position: absolute;
+    list-style: none;
+    
+}
+.board{
+    width:calc(700px/ var(--size-divisor2));
+    min-width: calc(700px/ var(--size-divisor2));
+    height:90vh;
+    border: 6px solid #636363;
+    background-color: #2b3137d2;
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+}
+.headings{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 0;
+    padding-bottom: 0.5em;
+    border-bottom: calc(6px/var(--size-divisor2)) solid rgb(255, 255, 255);
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    pointer-events: none;
+    -webkit-user-select: none;
+
+}
+.headings li{
+    color:white;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: calc(24px/var(--size-divisor2));
+    border-bottom: 2px solid rgba(255, 255, 255, 0.726);
+    line-height: 25px;
+    list-style: none;
+}
+.player{
+    padding:0 !important;
+    display: flex;
+    justify-content: flex-start;
+    margin:0;
+    line-height: 25%;
+    flex-direction: row;
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+.player li{
+    padding:0 !important;
+    color:white;
+    /* margin-bottom: 10px; */
+    font-family: 'Comfortaa', cursive;
+    font-size: 24px;
+    line-height: 5vh;
+    list-style: none;
+}
+.Rank{
+    font-size: 26px !important;
+    margin-left:4%;
+    margin-right:0;
+}
+.Name{
+    font-size: 28px !important;
+    margin-left:30%;
+    margin-right:auto;
+}
+.Points{
+    font-size: 26px !important;
+    margin-left:auto;
+    margin-right:10%;
+}
+.rankHeader{
+    margin-left:1%;
+    margin-right:0;
+}
+.nameHeader{
+    margin-left:25%;
+    margin-right:0;
+}
+.pointsHeader{
+    margin-left:38%;
+    margin-right:0;
+}
+@media(min-width: 190px){
+    :root{
+        --size-divisor2:2.2
+    }
+}
+@media(min-width: 290px){
+    :root{
+        --size-divisor2:2
+    }
+}
+@media(min-width: 390px){
+    :root{
+        --size-divisor2:1.8
+    }
+}
+
+@media(min-width: 490px){
+    :root{
+        --size-divisor2:1.6
+    }
+}
+@media(min-width: 590px){
+    :root{
+        --size-divisor2:1.4
+    }
+}
+@media(min-width: 700px){
+    :root{
+        --size-divisor2:1
+    }
+}

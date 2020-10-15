@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+.App{
+    transition:0.3s ease-in-out;
+    opacity:0;
+}
+.NavbarBody{
+    display: flex;
+    flex-direction: row;
+    background-color: #2b3137;
+    max-height: 220px;
+    width: 100vw;
+    transition: 300ms ease;   
+}
+.toggleBurger{
+    position: absolute;
+    top: 1.0rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;
+    height: 30px;
+}
+.bar{
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.NavButtons{
+    
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin-left:0;
+    margin-right: auto;
+    align-items: center;
+}
+.NavButton a{
+    transition: 1s ease-in;  
+}
+.NavButton{
+    
+    margin-right: 0.8em;
+    margin-top:0.3em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    user-select: none;
+    
+}
+.NavButtonLogin{
+    display: flex;
+    list-style-type: none;
+    margin-right: 0.1em;
+    align-self: center; 
+    justify-content: flex-end;
+}
+
+.NavButton a{
+    text-decoration: none;
+    color:white;
+    cursor: pointer;
+}
+
+.Logo{
+    display:flex;
+    align-self: center;
+    margin-top:6px;
+    margin-left:6px;
+    width: 47px;
+    height: 47px;
+    
+}
+.Loadbar{
+    background-color: white;
+    width: 100%;
+    height:4px;
+    
+
+}
+.progress{
+    background-color: #ffffff;
+	position: relative;
+	height: 4px;
+	width: 100%;
+
+}
+.progresscomplete{
+    background: linear-gradient(to left, #51d3a4, rgb(4, 221, 149));
+	box-shadow: 0 3px 3px -4px rgb(131, 255, 228), 0 3px 4px rgb(106, 255, 230);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 0;
+    opacity: 0.4;
+    transition: 0.5s ease-in-out 0.1s;
+}
+.PageBtns{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+.Solvebtn{
+    margin-top:6vh;
+    width:230px;
+    height:63px;
+    background-color:rgb(81,211,164);
+    border: 2px solid rgb(136,136,141);
+    border-radius: 2px;
+    font-family: 'Didact Gothic', sans-serif;
+    font-weight: bold;
+    color:white;
+    font-size: 3em;
+    outline: 0;
+    line-height: 0;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 3px rgb(228, 228, 228);
+    transition: ease-in-out cubic-bezier(0.215, 0.610, 0.355, 1);
+    transition-property:background;
+    -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+}
+.Solvebtn:active{
+    background-color:rgb(162, 250, 218) !important;
+    
+}
+.Solvebtn:hover{
+    background-color:rgb(75, 245, 182);
+}
+
+body{
+    background-image: linear-gradient(-68deg,#f4f2f9,#f3f4fc);
+    
+}
+@media (max-width:960px) {
+    .toggleBurger{
+        display: flex;
+    }
+    .Logo{
+        align-self: flex-start;
+    }
+    .NavButtons{
+        display: none;
+        opacity:0;
+        margin-left: 0;
+        margin-bottom: 0;
+        padding: 0;
+        width:100%;
+        flex-direction: column;
+        align-items: flex-end;
+        transition: 400ms ease;        
+    }
+    .NavButton{
+        margin-bottom: .5em;
+    }
+    .NavbarBody{
+        flex-direction: column;
+        height: 60px;
+    }
+    .NavButtonLogin{
+        transition: 400ms ease; 
+        opacity:0;       
+        display: none;
+        margin-top:0 ;
+        margin-right:2em;
+        align-content: flex-end;
+        width:100%;
+    }
+}
