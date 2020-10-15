@@ -46,7 +46,7 @@ export function retreiveUser(sessionId) {
 
 export function retreiveUsers() {
     return new Promise ((resolve, reject) => {
-        axios.get('http://localhost:5000/users')
+        axios.get('https://sudoku-mern.herokuapp.com/users')
         .then(res => {
             resolve(res)
         })
