@@ -55,7 +55,7 @@ export function retreiveUsers() {
 
 export function submitScore(submission) {
     return new Promise ((resolve, reject) => {
-        axios.post('http://localhost:5000/users/submit', submission )
+        axios.post('https://sudoku-mern.herokuapp.com/users/submit', submission )
         .then( res => {
             resolve(res)
         })

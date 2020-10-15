@@ -113,7 +113,7 @@ const Game = (props) => {
         let tempcounter = 0
         let RawPuzzle = null;
         let i = Math.floor((Math.random() * 500) + 1)
-        RawPuzzle = puzzleData[i]["puzzle"].toString()
+        RawPuzzle = "465912378189473562327568149738645291954821637216397854573284916642159783891736425" //puzzleData[i]["puzzle"].toString()
         setPuzzleID(RawPuzzle.substring(0, 6))
         let PuzzProcess = RawPuzzle.split("")
         let ReadyPuzz = {
@@ -142,14 +142,13 @@ const Game = (props) => {
 
     }, [props.gameState])
     useEffect(() => {
-        console.log(puzzleCorrect)
         if (puzzleCorrect) {
             const obj = getFromStorage('sudoku_react')
             if (obj !== null) {
                 Verify(obj.token)
                     .then(res => {
                         if (res.data.success) {
-                            submitScore({ userId: res.data.userId, score: (1000 / props.score) })
+                            submitScore({ userId: res.data.userId, score: parseInt(1000 / props.score) })
                         }
                     }).then(() => {
                         history.push('/Complete')
