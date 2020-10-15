@@ -111,7 +111,7 @@ const Game = (props) =>{
         let tempcounter = 0
         let RawPuzzle  = null;
         let i = Math.floor((Math.random() * 500) + 1)
-        RawPuzzle = "864371259325849761971265843436192587198657432257483916689734125713528694542916378" //puzzleData[i]["puzzle"].toString()
+        RawPuzzle = puzzleData[i]["puzzle"].toString()
         setPuzzleID(RawPuzzle.substring(0,6))
         let PuzzProcess = RawPuzzle.split("")
         let ReadyPuzz ={

@@ -1,7 +1,7 @@
 import axios from 'axios';
 export function Login(userData) {
     return new Promise((resolve, reject)=>{
-        axios.post('http://localhost:5000/users/login', userData)
+        axios.post('https://sudoku-mern.herokuapp.com/users/login', userData)
         .then(res => {
             resolve(res)
         })
@@ -9,7 +9,7 @@ export function Login(userData) {
 }
 export function Signup(userData) {
     return new Promise((resolve, reject)=>{
-        axios.post('http://localhost:5000/users/signup', userData)
+        axios.post('https://sudoku-mern.herokuapp.com/users/signup', userData)
         .then(res => {
             resolve(res)
         })
@@ -18,7 +18,7 @@ export function Signup(userData) {
 export function Verify(token) {
     
     return new Promise((resolve, reject)=>{
-        axios.get('http://localhost:5000/users/verify?token='+ token)
+        axios.get('https://sudoku-mern.herokuapp.com/users/verify?token='+ token)
         .then(res => {
             resolve(res)
         })
@@ -27,7 +27,7 @@ export function Verify(token) {
 };
 export function Logout(token) {
     return new Promise((resolve, reject)=>{
-        axios.get('http://localhost:5000/users/logout?token='+ token)
+        axios.get('https://sudoku-mern.herokuapp.com/users/logout?token='+ token)
         .then(res => {
             resolve(res)
         })
@@ -37,7 +37,7 @@ export function Logout(token) {
 export function retreiveUser(sessionId) {
     const key = {userId: sessionId}
     return new Promise ((resolve, reject) => {
-        axios.post('http://localhost:5000/users/user', key)
+        axios.post('https://sudoku-mern.herokuapp.com/users/user', key)
         .then(res => {
             resolve(res)
         })
