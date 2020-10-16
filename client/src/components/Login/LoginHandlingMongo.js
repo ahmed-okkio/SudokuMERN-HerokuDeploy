@@ -93,7 +93,7 @@ const LoginHandlingMongo = () => {
     return (
         <>
             {user ?( <Redirect to={{
-                pathname:'/Home',
+                pathname:'/',
                 state: {username}
             }}/>
                 ):(

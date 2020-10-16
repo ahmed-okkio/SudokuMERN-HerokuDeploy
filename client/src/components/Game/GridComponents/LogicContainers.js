@@ -30,7 +30,7 @@ const LogicContainers = props =>{
             
                 
             return(
-                <li key={index} status={status} id={index} onClick={(event)=>{props.PadHandler(event,status, props.Sector,index)}} style={{color:`${color}`}} >{inputValue}</li>
+                <li key={index} status={status} id={index}  onClick={(event)=>{props.PadHandler(event,status, props.Sector,index)}} style={{color:`${color}`}} >{inputValue}</li>
                 )
             })}
             

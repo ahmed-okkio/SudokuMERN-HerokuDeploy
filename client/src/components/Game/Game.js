@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import classes from '../../CSS/GameStyle.module.css';
 import LogicContainers from './GridComponents/LogicContainers';
 import GridOverlay from './GridComponents/GridOverlay';
@@ -52,7 +52,29 @@ const Game = (props) => {
             state: true
         })
     }
+    const KeyDownHandler = (key, callback) => {
+        console.log('test')
+        const callbackRef = useRef(callback);
+
+        useEffect(() => {
+            callbackRef.current = callback;
+        })
+        useEffect(()=>{
+
+            const handle = (event) =>{
+                if(event.code === key) {
+                    callbackRef.current(event)
+                }
+            }
+            document.addEventListener("keypress", handle);
+            return () => document.removeEventListener("keypress", handle)
+        },[key])
+    }
+    const unsureMarker = () =>{
+        console.log('U Pressed')
+    }
     const PadHandler = (event, stat, Sector, index) => {
+        
         if (inputPadState.showPad || stat == "static") {
             setInputPadState({
                 showPad: false
@@ -98,7 +120,7 @@ const Game = (props) => {
     }
 
 
-
+    KeyDownHandler('KeyU', unsureMarker);
     let GameComponents = (
         <div >
             {Object.keys(ActivePuzzle).map((Sector, key) => {

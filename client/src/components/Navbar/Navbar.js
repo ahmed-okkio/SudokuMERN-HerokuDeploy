@@ -125,7 +125,7 @@ const Navbar = props => {
     return (
         <>
             <nav className={classes.NavbarBody} style={{ height: `${navHeightState}px` }}>
-                <img className={classes.Logo} src={Logo} alt="Logo"></img>
+                <NavLink className={classes.LogoLink}to="/" onClick={LoadPage}><img className={classes.Logo} src={Logo} alt="Logo"></img></NavLink>
                 <ul className={classes.NavButtons} style={{ display: `${burgerState}`, opacity: `${navOpacityState}` }}>
                     <li className={classes.NavButton}>
                         <span onClick={LoadPage}><NavLink to="/Game">PLAY</NavLink></span></li>
@@ -137,7 +137,7 @@ const Navbar = props => {
                 </ul>
                 <ul className={classes.NavButtonLogin} style={{ display: `${burgerState}`, opacity: `${navOpacityState}` }}>
                     {user ? (<li className={classes.NavButton}>
-                        <NavLink onClick={logOutHandlerMongo} to="/Login">{username}  LOGOUT</NavLink></li>)
+                        <NavLink onClick={logOutHandlerMongo} to="/Login">{username}&nbsp;LOGOUT</NavLink></li>)
                         : (
                             <li className={classes.NavButton}>
                                 <NavLink onClick={LoadPage} to="/Login">LOGIN</NavLink></li>
