@@ -43,7 +43,7 @@
     
     flex-wrap: wrap;
     padding:0;
-    border: 16px solid rgb(182, 182, 182);
+    
     border-radius: 12px;
     width:calc(468px / var(--size-divisor));
     height:calc(468px / var(--size-divisor));
@@ -64,7 +64,7 @@
 .GameComp>li{
     background-color: #2b3137;
     border: 1px solid rgb(182, 182, 182);
-    border-radius: 4px;
+    border-radius: 8px;
     list-style-type: none;
     font-size: calc(42px/ var(--size-divisor));
     font-weight: bold;
@@ -115,29 +115,29 @@
 }
 .ThickGridH1{
     width: calc(468px/ var(--size-divisor));
-    height:calc(6px/ var(--size-divisor));
-    background-color: white;
-    margin-top:calc(156px / var(--size-divisor));
+    height:calc(4px/ var(--size-divisor));
+    background-color: #e8e8e8;
+    margin-top:calc(154px / var(--size-divisor));
     
 }
 .ThickGridH2{
     width: calc(468px/ var(--size-divisor));
-    height:calc(6px/ var(--size-divisor));;
-    background-color: white;
-    margin-top:calc(312px / var(--size-divisor));
+    height:calc(4px/ var(--size-divisor));;
+    background-color: #e8e8e8;
+    margin-top:calc(310px / var(--size-divisor));
     
 }
 .ThickGridW1{
-    width: calc(6px/ var(--size-divisor));
+    width: calc(4px/ var(--size-divisor));
     height:calc(468px/ var(--size-divisor));
-    background-color: white;
-    margin-left:calc(156px / var(--size-divisor));
+    background-color: #e8e8e8;
+    margin-left:calc(154px / var(--size-divisor));
 }
 .ThickGridW2{
-    width: calc(6px/ var(--size-divisor));
+    width: calc(4px/ var(--size-divisor));
     height:calc(468px/ var(--size-divisor));
-    background-color: white;
-    margin-left:calc(312px / var(--size-divisor));
+    background-color: #e8e8e8;
+    margin-left:calc(310px / var(--size-divisor));
    
 }
 @media(min-width: 274px){
