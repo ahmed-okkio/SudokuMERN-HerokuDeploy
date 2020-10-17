@@ -23,19 +23,21 @@
     background-color: rgb(255, 255, 255);
 }
 .playBackground:active{
-    background-color: rgb(173, 255, 237);
+    background-color: rgb(72, 247, 189);
 }
 .playBackground h1{
     padding-bottom: 2vh;
     align-self: center;
     font-size: calc(82px/ var(--size-divisorhome));
     font-family: 'Didact Gothic';
-    color: rgb(223, 49, 170);
-    animation: color-change 5s 0s infinite;
+    color: rgb(255, 255, 255);
     -moz-user-select: -moz-none;
     -khtml-user-select: none;
     pointer-events: none;
     -webkit-user-select: none;
+}
+.playBackground:hover h1{
+    color: rgb(0, 0, 0); 
 }
 .svgContainer{
     display:flex;
@@ -52,12 +54,14 @@
 }
 .svgContainer .Su{
     margin:0;
+    margin-top: 18vh;
     padding-left: 1.2vh;
     align-self: flex-start;
     position: absolute;
     font-size: calc(82px/ var(--size-divisorhome));
     color: rgb(223, 49, 170);
     z-index: 10;
+    animation: color-change 5s 0s infinite;
 }
 .svgContainer .Do{
     
@@ -66,26 +70,27 @@
     align-self: center;
     position: absolute;
     font-size: calc(88px/ var(--size-divisorhome));
-    color: white;
+    color: rgb(0, 240, 188);
     z-index: 10;
     animation: color-change 5s 0s infinite;
 }
 .svgContainer .Ku{
     margin:0;
-    margin-top:37vh;
+    margin-top:18vh;
     padding-right: 1.2vh;
     align-self: flex-end;
     position: absolute;
     font-size: calc(82px/ var(--size-divisorhome));
     color: rgb(0, 183, 255);
     z-index: 10;
+    animation: color-change 5s 0s infinite;
 }
 .svgContainer .One{
     margin:0;
     align-self: center;
     position: absolute;
     font-size: calc(82px/ var(--size-divisorhome));
-    color: rgb(0, 183, 255);
+    color: white;
     z-index: 10;
 }
 .svgContainer .Five{
@@ -95,7 +100,7 @@
     align-self: flex-start;
     position: absolute;
     font-size: calc(88px/ var(--size-divisorhome));
-    color: rgb(223, 49, 170);
+    color: white;
     z-index: 10;
 }
 .svgContainer .Nine{
@@ -105,7 +110,7 @@
     align-self: flex-end;
     position: absolute;
     font-size: calc(88px/ var(--size-divisorhome));
-    color: rgb(0, 183, 255);
+    color: white;
     z-index: 10;
 }
 .svgContainer .Three{
@@ -114,27 +119,26 @@
     align-self: center;
     position: absolute;
     font-size: calc(88px/ var(--size-divisorhome));
-    color: rgb(223, 49, 170);
+    color: white;
     z-index: 10;
 }
 .svgContainer .Eight{
     margin:0;
-    margin-top:18vh;
     padding-left: 3.5vh;
     align-self: flex-start;
     position: absolute;
     font-size: calc(88px/ var(--size-divisorhome));
-    color: rgb(0, 240, 188);
+    color: white;
     z-index: 10;
 }
 .svgContainer .Four{
     margin:0;
-    margin-top:18vh;
+    margin-top:37vh;
     padding-right: 3.5vh;
     align-self: flex-end;
     position: absolute;
     font-size: calc(88px/ var(--size-divisorhome));
-    color: rgb(0, 240, 188);
+    color: white;
     z-index: 10;
 }
 
@@ -234,11 +238,19 @@
     transform: rotate(9deg);
     z-index: -1;
 }
+.svgContainer a{
+    margin-top: 5vh;
+    font-size: 2vw;
+    pointer-events: all !important;
+    color:black;
+    font-family: 'Didact Gothic', sans-serif;
+    align-self: center;
+}
 @keyframes color-change {
-    0% {color: rgb(0, 183, 255);}
+    0% {color:rgb(223, 49, 170);}
     33% {color: rgb(0, 240, 188);}
-    66% {color:rgb(223, 49, 170);}
-    100% {color: rgb(0, 183, 255);}
+    66% {color: rgb(0, 183, 255);}
+    100% {color:rgb(223, 49, 170);}
 }
 @media(min-width: 274px){
     :root{

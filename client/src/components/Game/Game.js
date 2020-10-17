@@ -52,27 +52,27 @@ const Game = (props) => {
             state: true
         })
     }
-    const KeyDownHandler = (key, callback) => {
-        console.log('test')
-        const callbackRef = useRef(callback);
+    // const KeyDownHandler = (key, callback) => {
+    //     console.log('test')
+    //     const callbackRef = useRef(callback);
 
-        useEffect(() => {
-            callbackRef.current = callback;
-        })
-        useEffect(()=>{
+    //     useEffect(() => {
+    //         callbackRef.current = callback;
+    //     })
+    //     useEffect(()=>{
 
-            const handle = (event) =>{
-                if(event.code === key) {
-                    callbackRef.current(event)
-                }
-            }
-            document.addEventListener("keypress", handle);
-            return () => document.removeEventListener("keypress", handle)
-        },[key])
-    }
-    const unsureMarker = () =>{
-        console.log('U Pressed')
-    }
+    //         const handle = (event) =>{
+    //             if(event.code === key) {
+    //                 callbackRef.current(event)
+    //             }
+    //         }
+    //         document.addEventListener("keypress", handle);
+    //         return () => document.removeEventListener("keypress", handle)
+    //     },[key])
+    // }
+    // const unsureMarker = () =>{
+    //     console.log('U Pressed')
+    // }
     const PadHandler = (event, stat, Sector, index) => {
         
         if (inputPadState.showPad || stat == "static") {
@@ -120,7 +120,7 @@ const Game = (props) => {
     }
 
 
-    KeyDownHandler('KeyU', unsureMarker);
+    // KeyDownHandler('KeyU', unsureMarker);
     let GameComponents = (
         <div >
             {Object.keys(ActivePuzzle).map((Sector, key) => {
