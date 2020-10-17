@@ -151,7 +151,7 @@
     width:10vw;
     opacity: 0.7;
     transform: rotate(70deg);
-    z-index: 1;
+    z-index: -1;
 }
 .onesquare2{
     position: fixed;
@@ -161,7 +161,7 @@
     width:10vw;
     opacity: 0.7;
     transform: rotate(60deg);
-    z-index: 1;
+    z-index: -1;
 }
 .onesquare3{
     position: fixed;
@@ -171,7 +171,7 @@
     width:8vw;
     opacity: 0.2;
     transform: rotate(35deg);
-    z-index: 1;
+    z-index: -1;
 }
 .onesquare4{
     position: fixed;
@@ -182,7 +182,7 @@
     width:5vw;
     opacity: 0.7;
     transform: rotate(105deg);
-    z-index: 1;
+    z-index: -1;
 }
 .onesquare5{
     position: fixed;
@@ -192,7 +192,7 @@
     width:20vw;
     opacity: 0.7;
     transform: rotate(45deg);
-    z-index: 1;
+    z-index: -1;
 }
 .onesquare6{
     position: fixed;
@@ -202,7 +202,7 @@
     width:15vw;
     opacity: 0.4;
     transform: rotate(20deg);
-    z-index: 1;
+    z-index: -1;
 }
 .onesquare7{
     position: fixed;
@@ -212,7 +212,7 @@
     width:20vw;
     opacity: 0.5;
     transform: rotate(10deg);
-    z-index: 1;
+    z-index: -1;
 }
 .onesquare8{
     position: fixed;
@@ -232,7 +232,7 @@
     width:6vw;
     opacity: 0.2;
     transform: rotate(9deg);
-    z-index: 1;
+    z-index: -1;
 }
 @keyframes color-change {
     0% {color: rgb(0, 183, 255);}
