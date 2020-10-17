@@ -31,7 +31,7 @@ const Home = () => {
                 <p className={classes.Eight}>8</p>
                 <p className={classes.Four}>4</p>
                 <img src={Squares} className={classes.ninesquares} alt="nine-squares"></img>
-                <a href="https://trello.com/b/nsFIjztS/sudoku-mern" target="_blank">Finsished and upcoming changes</a>
+                <a href="https://trello.com/b/nsFIjztS/sudoku-mern" target="_blank">Finished and upcoming changes</a>
             </div>
             
         </div>
