@@ -240,7 +240,7 @@
 }
 .svgContainer a{
     margin-top: 5vh;
-    font-size: 2vw;
+    font-size: calc(26px/ var(--size-divisorhome));
     pointer-events: all !important;
     color:black;
     font-family: 'Didact Gothic', sans-serif;
