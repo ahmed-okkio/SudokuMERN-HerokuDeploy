@@ -1,7 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import classes from '../../../CSS/GameStyle.module.css'
 const LogicContainers = props =>{
-    
     let pushpuzzle = (
         <ul className={classes.GameComp} >
             
@@ -18,6 +17,7 @@ const LogicContainers = props =>{
                 }
                 else{
                     status = "static"
+                    color = ""
                 }
                 if(props.start){
                     
@@ -25,6 +25,7 @@ const LogicContainers = props =>{
                 else{
                     inputValue = " "
                     status = "static"
+                    color = ""
                 }
                 
             

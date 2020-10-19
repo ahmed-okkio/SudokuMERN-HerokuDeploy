@@ -1,9 +1,15 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect, useRef, useImperativeHandle, forwardRef} from 'react';
 import classes from '../../CSS/GameStyle.module.css';
 
-const Timer = (props) =>{
+const Timer = forwardRef((props, ref) =>{
     const [timersec,settimersec] =useState('00');
     const [timermin,settimermin] =useState('00');
+    useImperativeHandle(ref, ()=>({
+        resetTimer(){
+            settimermin('00');
+            settimersec('00')
+        }
+    }));
     let interval = useRef();
     const countUp = () =>{
         interval = setTimeout(() => {
@@ -44,6 +50,6 @@ const Timer = (props) =>{
     return(
         <div className={classes.Timer}>{timermin+":"+timersec}</div>
     )
-}
+})
 
 export default Timer;

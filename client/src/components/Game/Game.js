@@ -8,17 +8,13 @@ import Solve from '../Buttons/Solve';
 import Finish from '../Buttons/Finish';
 import puzzleData from '../../Assets/data.json';
 // import fire from '../Login/fire';
+import refreshButton from '../../Assets/refreshPuzzle.svg'
 import { useHistory } from 'react-router-dom';
 import { submitScore, Verify } from '../utils/requests';
 import { getFromStorage } from '../utils/localstorage';
 
 const Game = (props) => {
-    const [inputPadState, setInputPadState] = useState({
-        showPad: false,
-        Xcoords: null,
-        Ycoords: null,
-        cellindex: null
-    })
+    const [inputPadState, setInputPadState] = useState({showPad: false, Xcoords: null, Ycoords: null, cellindex: null})
     const [ActivePuzzle, SetPuzzle] = useState({
         R1: [null, null, null, null, null, null, null, null, null],
         R2: [null, null, null, null, null, null, null, null, null],
@@ -28,12 +24,12 @@ const Game = (props) => {
         R6: [null, null, null, null, null, null, null, null, null],
         R7: [null, null, null, null, null, null, null, null, null],
         R8: [null, null, null, null, null, null, null, null, null],
-        R9: [null, null, null, null, null, null, null, null, null]
-    });
+        R9: [null, null, null, null, null, null, null, null, null]});
     const [puzzCompState, setPuzzComp] = useState({ complete: 0 });
     const [triggerCheck, setTrigger] = useState({ trigger: false, state: false });
     const [puzzleCorrect, setPuzzleCorrect] = useState(false);
     const [puzzleID, setPuzzleID] = useState('');
+    const [style,setStyle] = useState();
     const puzzleFinish = () => {
         let temp = 0
         Object.keys(ActivePuzzle).map((Sector, key) => {
@@ -134,7 +130,7 @@ const Game = (props) => {
     const PuzzleLoader = () => {
         let tempcounter = 0
         let RawPuzzle = null;
-        let i = Math.floor((Math.random() * 500) + 1)
+        let i = Math.floor((Math.random() * 498) + 1)
         RawPuzzle = puzzleData[i]["puzzle"].toString()
         setPuzzleID(RawPuzzle.substring(0, 6))
         let PuzzProcess = RawPuzzle.split("")
@@ -156,6 +152,20 @@ const Game = (props) => {
             }
         }
         SetPuzzle(ReadyPuzz)
+    }
+    const puzzleRefresh = () => {
+        PuzzleLoader()
+        props.resetTimer()
+        setStyle({
+            transform: "rotate(360deg)"
+        })
+        setTimeout(()=>{
+            setStyle({
+                transition: 'none',
+                transform: "rotate(0deg)"
+            })
+        },500)
+        
     }
     useEffect(() => {
         if (props.gameState) {
@@ -213,7 +223,7 @@ const Game = (props) => {
     }
     return (
         <div className={classes.gamePage} onClick={togglePad}>
-
+            <img src={refreshButton} onClick={puzzleRefresh} className={classes.refreshButton} style={style}></img>
             <div className={classes.GameStyleContainer} >
 
                 <padContext.Provider value={{ showPad: inputPadState.showPad, PadHandler: PadHandler }}>

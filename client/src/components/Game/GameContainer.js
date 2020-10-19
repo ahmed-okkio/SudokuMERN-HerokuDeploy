@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState,useEffect, useRef } from 'react';
 
 import classes from '../../CSS/Main.module.css';
 import Game from './Game';
@@ -25,13 +25,15 @@ const GameContainer = () =>{
     const scoreGrab = (score)=>{
         setScore({score:score})
     }
+    const resetTimerRef = useRef();
     return(
         <div className={classes.App} style={{opacity:`${LoadTemp.opacity}`,transition:LoadTemp.trans}}>
-            <Timer gameState={gameState.gameState} scoreGrab={scoreGrab}/>
+            <Timer ref={resetTimerRef} gameState={gameState.gameState} scoreGrab={scoreGrab}/>
             <Game 
                 gameState={gameState.gameState}
                 gameHandler={gameHandler}
-                score={pushScore.score}/>
+                score={pushScore.score}
+                resetTimer={() =>resetTimerRef.current.resetTimer()}/>
         </div>
     )
 }
