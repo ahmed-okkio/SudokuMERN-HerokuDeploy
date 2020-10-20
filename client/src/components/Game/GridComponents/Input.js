@@ -33,7 +33,6 @@ const InputPad = (props) => {
             opacity: 0.8,
             backgroundColor: "#FDC12A"
         } // Sets unsure button opacity and color
-        console.log('test')
     }
 
     const keyPads = []
