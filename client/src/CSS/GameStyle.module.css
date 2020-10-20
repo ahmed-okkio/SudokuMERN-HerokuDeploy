@@ -238,7 +238,7 @@
     }
 }
 @media (max-width:960px) {
-    .padutils {
+    .padutils li{
         opacity:0.8;
     }
     .Padstyle {
