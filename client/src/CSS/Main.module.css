@@ -3,13 +3,14 @@
 .App{
     transition:0.3s ease-in-out;
     opacity:0;
+    width:100%;
 }
 .NavbarBody{
     display: flex;
     flex-direction: row;
     background-color: #2b3137;
     max-height: 220px;
-    width: 100vw;
+    width: 100%;
     transition: 300ms ease;   
     z-index: 10;
 }

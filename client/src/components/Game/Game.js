@@ -56,15 +56,14 @@ const Game = (props) => {
                 showPad: false
             });
         }
-        else {
-            setInputPadState({
-                showPad: true,
-                Xcoords: event.clientX,
-                Ycoords: event.clientY,
-                cellindex: index,
-                Sector: Sector
-            })
-        }
+        setInputPadState({
+            showPad: true,
+            Xcoords: event.clientX,
+            Ycoords: event.clientY,
+            cellindex: index,
+            Sector: Sector
+        })
+        
     }
     const InputHandler = (padinput) => {
         let Tempstate = ActivePuzzle

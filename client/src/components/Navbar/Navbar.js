@@ -156,14 +156,11 @@ const Navbar = props => {
                                 <NavLink onClick={LoadPage} to="/Login">LOGIN</NavLink></li>
                         )}
                 </ul>
-                <ul>
                     <span className={classes.toggleBurger} onClick={toggleBurger}>
                         <span className={classes.bar} />
                         <span className={classes.bar} />
                         <span className={classes.bar} />
                     </span>
-                </ul>
-
             </nav>
             <Progress opacity={loadState.opacity} complete={loadState.loadprog} loadbar={loadState.loadprog} />
         </>
