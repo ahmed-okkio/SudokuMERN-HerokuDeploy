@@ -1,26 +1,63 @@
-import React, {} from 'react';
+import React, { useState } from 'react';
 import classes from '../../../CSS/GameStyle.module.css';
-const InputPad = (props) =>{
+import erasersvg from '../../../Assets/eraser.svg';
+import pencilsvg from '../../../Assets/pencil.svg';
+const InputPad = (props) => {
     const style = {
-        top: props.Ycoords-69,
-        left: props.Xcoords-64,
+        top: props.Ycoords,
+        left: props.Xcoords,
         opacity: 1
     }
-    const keyPads=[]
-    
-    for(let num = 1;num<10 ;num++){
-        
+    const unsureModeHandler = () => {
+        const tempstate = props.unsureMode
+        props.setUnsureMode(!tempstate)
+    }
+    const inputHandler = (input) => {
+        let unsureInput = null
+        if (props.unsureMode) {
+            unsureInput = input.toString() + "U"
+            props.InputHandler(unsureInput)
+        } else {
+            props.InputHandler(input)
+        }
+    }
+    if (props.Xcoords < 60) {
+        style.left += 40
+
+    } else if ((window.screen.availWidth - props.Xcoords) < 80) {
+        style.left -= 40
+    }
+    let unsureModeIndicator = {}
+    if(props.unsureMode) {
+        unsureModeIndicator = {
+            opacity: 0.8,
+            backgroundColor: "#FDC12A"
+        } // Sets unsure button opacity and color
+        console.log('test')
+    }
+
+    const keyPads = []
+
+    for (let num = 1; num < 10; num++) {
+
         keyPads.push(
-        <li onClick={()=>{props.InputHandler(num)}} key={num}>{num}</li>
+            <li onClick={() => { inputHandler(num) }} key={num}>{num}</li>
         )
-        
+
     }
 
 
-    return(
+
+    return (
         <div className={classes.PadContainer} style={style} >
+
             <ul className={classes.Padstyle}  >
+
                 {keyPads}
+            </ul>
+            <ul className={classes.padutils}>
+                <li onClick={() => { inputHandler(0) }}><img src={erasersvg} /></li>
+                <li onClick={unsureModeHandler} style={{opacity:unsureModeIndicator.opacity, backgroundColor: unsureModeIndicator.backgroundColor}}><img src={pencilsvg} /></li>
             </ul>
         </div>
     )

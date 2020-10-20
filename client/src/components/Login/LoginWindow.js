@@ -23,6 +23,16 @@ const LoginWindow = (props) => {
             setsignup({ signup: !temp })
         }, 300)
     }
+    const handleEnterLogin = (event) => {
+        if (event.key === 'Enter') {
+            loginHandler()
+        }
+      }
+    const handleEnterSignup = (event) => {
+    if (event.key === 'Enter') {
+        signupHandler()
+    }
+    }
 
     let loginpage = null;
     if (!signup.signup) {
@@ -32,7 +42,7 @@ const LoginWindow = (props) => {
                     <label>Username</label>
                     <input type="text" autoFocus required value={username} onChange={(e) => setUsername(e.target.value)}></input>
                     <label >Password</label>
-                    <input type="password" required value={password} onChange={(e)=> setPassword(e.target.value)}></input>
+                    <input type="password" required value={password} onKeyDown={handleEnterLogin} onChange={(e)=> setPassword(e.target.value)}></input>
                     <p className={classes.errormsg}>{receiveError}</p>
                 </div>
                 <button className={classes.button} onClick={loginHandler}>LOGIN</button>
@@ -52,7 +62,7 @@ const LoginWindow = (props) => {
                     <label >Password</label>
                     <input type="password" required value={password} onChange={(e)=> setPassword(e.target.value)}></input>
                     <label className={classes.ConfirmPass} >Confirm Password</label>
-                    <input type="password" required onChange={(e)=> setPasswordConf(e.target.value)} ></input>
+                    <input type="password" required onKeyDown={handleEnterSignup}onChange={(e)=> setPasswordConf(e.target.value)} ></input>
                     <p className={classes.errormsg}>{passwordConfError}</p>
                 </div>
                 <button className={classes.button} onClick={signupHandler}>SIGNUP</button>

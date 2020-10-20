@@ -30,6 +30,7 @@ const Game = (props) => {
     const [puzzleCorrect, setPuzzleCorrect] = useState(false);
     const [puzzleID, setPuzzleID] = useState('');
     const [style,setStyle] = useState();
+    const [unsureMode,setUnsureMode] = useState(false);
     const puzzleFinish = () => {
         let temp = 0
         Object.keys(ActivePuzzle).map((Sector, key) => {
@@ -48,27 +49,6 @@ const Game = (props) => {
             state: true
         })
     }
-    // const KeyDownHandler = (key, callback) => {
-    //     console.log('test')
-    //     const callbackRef = useRef(callback);
-
-    //     useEffect(() => {
-    //         callbackRef.current = callback;
-    //     })
-    //     useEffect(()=>{
-
-    //         const handle = (event) =>{
-    //             if(event.code === key) {
-    //                 callbackRef.current(event)
-    //             }
-    //         }
-    //         document.addEventListener("keypress", handle);
-    //         return () => document.removeEventListener("keypress", handle)
-    //     },[key])
-    // }
-    // const unsureMarker = () =>{
-    //     console.log('U Pressed')
-    // }
     const PadHandler = (event, stat, Sector, index) => {
         
         if (inputPadState.showPad || stat == "static") {
@@ -106,7 +86,7 @@ const Game = (props) => {
     let inputmenu = null;
     if (inputPadState.showPad) {
         inputmenu = (
-            <InputPad InputHandler={InputHandler} Ycoords={inputPadState.Ycoords} Xcoords={inputPadState.Xcoords} />
+            <InputPad InputHandler={InputHandler} unsureMode={unsureMode} setUnsureMode={setUnsureMode} Ycoords={inputPadState.Ycoords} Xcoords={inputPadState.Xcoords} />
         );
     }
     const togglePad = () => {
@@ -222,7 +202,8 @@ const Game = (props) => {
             score={props.score} />
     }
     return (
-        <div className={classes.gamePage} onClick={togglePad}>
+        <div className={classes.gamePage} >
+            {inputmenu}
             <img src={refreshButton} onClick={puzzleRefresh} className={classes.refreshButton} style={style}></img>
             <div className={classes.GameStyleContainer} >
 
@@ -233,8 +214,8 @@ const Game = (props) => {
                     </div>
                 </padContext.Provider>
             </div>
-            {inputmenu}
             {StartFin}
+            <div className={classes.outOfBounds} onClick={togglePad}/>
         </div>
     )
 };
