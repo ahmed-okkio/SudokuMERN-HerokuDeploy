@@ -50,19 +50,21 @@ const Game = (props) => {
         })
     }
     const PadHandler = (event, stat, Sector, index) => {
-        
-        if (inputPadState.showPad || stat == "static") {
+        if(stat == "static"){
+        } else {
+            if (inputPadState.showPad) {
+                setInputPadState({
+                    showPad: false
+                });
+            }
             setInputPadState({
-                showPad: false
-            });
-        }
-        setInputPadState({
-            showPad: true,
-            Xcoords: event.clientX,
-            Ycoords: event.clientY,
-            cellindex: index,
-            Sector: Sector
-        })
+                showPad: true,
+                Xcoords: event.clientX,
+                Ycoords: event.clientY,
+                cellindex: index,
+                Sector: Sector
+            })
+     }
         
     }
     const InputHandler = (padinput) => {

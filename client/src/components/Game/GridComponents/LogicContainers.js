@@ -8,7 +8,7 @@ const LogicContainers = props =>{
                 let status = null;
                 let color = null;
                 let inputValue = null
-                if (val == null) {
+                if (val == null || !props.start) {
                     inputValue = " "
                     status = "static"
                     color = ""
