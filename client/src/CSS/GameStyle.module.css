@@ -26,6 +26,7 @@
     transition: 500ms ease-out;
     height:calc(40px/ var(--size-divisor));
     cursor: pointer;
+    z-index: 2;
 }
 .refreshButton:active{
     
@@ -141,7 +142,7 @@
     margin-top:auto;
     margin-bottom: auto;
     text-align: center;
-    line-height: calc(5vh/ var(--size-divisor));;
+    line-height: calc(45px/ var(--size-divisor));;
     padding: 0;
     list-style: none;
     
