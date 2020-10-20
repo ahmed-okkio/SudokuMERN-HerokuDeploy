@@ -25,7 +25,7 @@ const InputPad = (props) => {
         style.left += 40
 
     } else if ((window.screen.availWidth - props.Xcoords) < 80) {
-        style.left -= 40
+        style.left -= 60
     }
     let unsureModeIndicator = {}
     if(props.unsureMode) {
