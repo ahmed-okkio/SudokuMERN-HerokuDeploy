@@ -24,6 +24,8 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    user-drag: none; 
+    -webkit-user-drag: none;
     z-index: -1;
 }
 .refreshButton {
@@ -92,7 +94,7 @@
     font-family: "Didact Gothic", sans-serif;
 }
 .GameComp>li:hover{
-    background-color: rgb(104, 255, 210);
+    background-color: rgb(120, 228, 194);
     transition:50ms ease-out;
 }
 
@@ -140,6 +142,10 @@
     background-color: rgba(255, 255, 255,0.8);
     
 }
+.Padstyle li:active{
+    background-color:rgb(255, 255, 255);
+    color:black !important;
+}
 .padutils {
     display: grid;
     transition: 100ms ease-out;
@@ -170,6 +176,18 @@
     height:calc(50px/ var(--size-divisor));
     font-family: "Roboto", sans-serif;
 }
+.padutilsClose{
+    padding:0;
+    font-size: 42px !important;
+    color: rgba(255, 255, 255, 0.712) !important;
+    line-height: 50px;
+   
+    
+}
+/* .padutilsClose li{
+    padding-left: 0;
+    vertical-align: middle !important;
+} */
 .padutils img{
     vertical-align: middle;
     width:calc(35px/ var(--size-divisor));;
@@ -177,6 +195,10 @@
 .padutils li:hover{
     opacity:1;
     
+}
+.padutils li:active {
+    background-color:rgb(255, 255, 255);
+    color:black !important;
 }
 .outOfBounds {
     position: absolute;

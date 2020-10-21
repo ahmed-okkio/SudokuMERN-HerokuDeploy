@@ -4,6 +4,14 @@
     transition:0.3s ease-in-out;
     opacity:0;
     width:100%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    user-drag: none; 
+    -webkit-user-drag: none;
 }
 .NavbarBody{
     display: flex;
@@ -13,6 +21,7 @@
     width: 100%;
     transition: 300ms ease;   
     z-index: 10;
+    
 }
 .toggleBurger{
     position: absolute;
@@ -31,7 +40,6 @@
     border-radius: 10px;
 }
 .NavButtons{
-    
     display: flex;
     flex-direction: row;
     list-style-type: none;
@@ -71,7 +79,7 @@
     align-self: center;
     width: 47px;
     height: 47px;
-    
+    -webkit-user-drag: none;
 }
 .LogoLink{
     margin-top:1.2vh;
@@ -135,11 +143,12 @@
    -webkit-user-select: none;
 }
 .Solvebtn:active{
-    background-color:rgb(162, 250, 218) !important;
+    background-color:rgb(117, 215, 253) !important;
+    color:rgb(0, 0, 0) !important;
     
 }
 .Solvebtn:hover{
-    background-color:rgb(75, 245, 182);
+    background-color:rgb(0, 183, 255);;
 }
 
 body{
@@ -179,7 +188,8 @@ body{
     }
     .NavButtonLogin{
         transition: 400ms ease; 
-        opacity:0;       
+        opacity:0;
+        padding: 0;       
         display: none;
         margin-top:0 ;
         margin-right:2em;

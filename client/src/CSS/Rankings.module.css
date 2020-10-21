@@ -6,6 +6,12 @@
     min-height: 600px;
     display: flex;
     transition:1s ease-in;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .board{
     width:calc(700px/ var(--size-divisor2));

@@ -17,7 +17,7 @@ const LogicContainers = props =>{
                         inputValue = val
                     } if (val==0||typeof val == "string"){
                         status = "dynamic"
-                        color = "#08f7be"
+                        color = "rgb(0, 183, 255)"
                     } else {
                         status = "static"
                         color = ""
@@ -27,7 +27,7 @@ const LogicContainers = props =>{
                         } else {
                             inputValue = val.split('')[0]
                          }
-                        color = "#ddbe70"
+                        color = "#ffd66f"
                     } 
                 } 
             return(

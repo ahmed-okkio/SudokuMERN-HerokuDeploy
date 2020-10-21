@@ -84,30 +84,12 @@ const Game = (props) => {
         // 
 
     }
-    let inputmenu = null;
-    if (inputPadState.showPad) {
-        inputmenu = (
-            <InputPad InputHandler={InputHandler} unsureMode={unsureMode} setUnsureMode={setUnsureMode} Ycoords={inputPadState.Ycoords} Xcoords={inputPadState.Xcoords} />
-        );
-    }
+    
     const togglePad = () => {
         if (inputPadState.showPad) {
             setInputPadState({ showPad: false })
         }
     }
-
-
-    // KeyDownHandler('KeyU', unsureMarker);
-    let GameComponents = (
-        <div >
-            {Object.keys(ActivePuzzle).map((Sector, key) => {
-                return (
-                    <LogicContainers start={props.gameState} {...inputPadState} PadHandler={PadHandler} Data={ActivePuzzle[Sector]} Sector={Sector} key={key} />
-                )
-            })}
-
-        </div>
-    )
     const PuzzleLoader = () => {
         let tempcounter = 0
         let RawPuzzle = null;
@@ -148,6 +130,24 @@ const Game = (props) => {
         },500)
         
     }
+
+    let GameComponents = (
+        <div >
+            {Object.keys(ActivePuzzle).map((Sector, key) => {
+                return (
+                    <LogicContainers start={props.gameState} {...inputPadState} PadHandler={PadHandler} Data={ActivePuzzle[Sector]} Sector={Sector} key={key} />
+                )
+            })}
+
+        </div>
+    )
+    let inputmenu = null;
+    if (inputPadState.showPad) {
+        inputmenu = (
+            <InputPad InputHandler={InputHandler} unsureMode={unsureMode} setUnsureMode={setUnsureMode} togglePad={togglePad} Ycoords={inputPadState.Ycoords} Xcoords={inputPadState.Xcoords} />
+        );
+    }
+    
     useEffect(() => {
         if (props.gameState) {
             PuzzleLoader()

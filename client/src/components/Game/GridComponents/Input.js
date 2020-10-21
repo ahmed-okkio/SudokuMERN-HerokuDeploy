@@ -49,7 +49,9 @@ const InputPad = (props) => {
 
     return (
         <div className={classes.PadContainer} style={style} >
-
+            <ul className={classes.padutils}>
+                <li onClick={props.togglePad} className={classes.padutilsClose}>X</li>
+            </ul>
             <ul className={classes.Padstyle}  >
 
                 {keyPads}

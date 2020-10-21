@@ -21,16 +21,18 @@ const Home = () => {
                 <h1>Play</h1>
             </NavLink>
             <div className={classes.svgContainer}>
-                <p className={classes.Su}>Su</p>
-                <p className={classes.Do}>do</p>
-                <p className={classes.Ku}>Ku</p>
-                <p className={classes.One}>1</p>
-                <p className={classes.Five}>5</p>
-                <p className={classes.Nine}>9</p>
-                <p className={classes.Three}>3</p>
-                <p className={classes.Eight}>8</p>
-                <p className={classes.Four}>4</p>
-                <img src={Squares} className={classes.ninesquares} alt="nine-squares"></img>
+                <div className={classes.ninesquaresContainer}>
+                    <img src={Squares} className={classes.ninesquares} alt="nine-squares"></img>
+                    <p className={classes.Su}>Su</p>
+                    <p className={classes.Do}>do</p>
+                    <p className={classes.Ku}>Ku</p>
+                    <p className={classes.One}>1</p>
+                    <p className={classes.Eight}>8</p>
+                    <p className={classes.Nine}>9</p>
+                    <p className={classes.Five}>5</p>
+                    <p className={classes.Three}>3</p>
+                    <p className={classes.Four}>4</p>
+                </div>
                 <a href="https://trello.com/b/nsFIjztS/sudoku-mern" target="_blank">Finished and upcoming changes</a>
             </div>
             
