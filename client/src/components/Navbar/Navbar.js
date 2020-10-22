@@ -3,7 +3,6 @@ import classes from '../../CSS/Main.module.css'
 import Logo from '../../Assets/Navbar/Logo.png'
 import Progress from './LoadingElem';
 import { NavLink } from 'react-router-dom';
-import fire from '../Login/fire';
 import { getFromStorage, setInStorage } from '../utils/localstorage';
 import { Verify, Logout, retreiveUser } from '../utils/requests';
 
@@ -137,7 +136,7 @@ const Navbar = props => {
     }, [])
     return (
         <>
-            <nav className={classes.NavbarBody} onResize={onResize} style={{ height: `${navHeightState}px` }}>
+            <nav className={classes.NavbarBody} style={{ height: `${navHeightState}px` }}>
                 <NavLink className={classes.LogoLink}to="/" onClick={LoadPage}><img className={classes.Logo} src={Logo} alt="Logo"></img></NavLink>
                 <ul className={classes.NavButtons} style={{ display: `${burgerState}`, opacity: `${navOpacityState}` }}>
                     <li className={classes.NavButton}>

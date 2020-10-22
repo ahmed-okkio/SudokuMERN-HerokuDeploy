@@ -1,5 +1,4 @@
 import React, { useState,useEffect, useRef } from 'react';
-
 import classes from '../../CSS/Main.module.css';
 import Game from './Game';
 import Timer from '../Timer/Timer';

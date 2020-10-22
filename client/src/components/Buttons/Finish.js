@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import classes from '../../CSS/Main.module.css'
 
-
-
 const Finish = (props) => {
     const [BttnStyle, setBttnStyle] = useState({
         BttnCol: ""
@@ -52,28 +50,31 @@ const Finish = (props) => {
     }
     
     let Button = (<button onClick={props.onClick} className={classes.Solvebtn} style={{ backgroundColor: BttnStyle.BttnCol }}>FINISH</button>)
-    
+
     useEffect(() => {
-        if (props.triggstate) {
-            if (props.Puzzle == null || props.puzzleComplete !== 81) {
-                setBttnStyle({ BttnCol: "#ff3363" })
-                setTimeout(() => {
-                    setBttnStyle({})
-                }, 700)
-            }
-            else {
-                if (solvePuzzle(props.Puzzle)) {
-                     return(props.endPuzzle()) 
-                }
-                
-                else {
+        const Solve = () => {
+            if (props.triggstate) {
+                if (props.Puzzle == null || props.puzzleComplete !== 81) {
                     setBttnStyle({ BttnCol: "#ff3363" })
                     setTimeout(() => {
                         setBttnStyle({})
                     }, 700)
                 }
+                else {
+                    if (solvePuzzle(props.Puzzle)) {
+                        return(props.endPuzzle()) 
+                    }
+                    
+                    else {
+                        setBttnStyle({ BttnCol: "#ff3363" })
+                        setTimeout(() => {
+                            setBttnStyle({})
+                        }, 700)
+                    }
+                }
             }
-        }
+    }
+    Solve()
     }, [props.trigger,props.score])
     return (
         <div className={classes.PageBtns}>

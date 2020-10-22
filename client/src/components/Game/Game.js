@@ -4,11 +4,10 @@ import LogicContainers from './GridComponents/LogicContainers';
 import GridOverlay from './GridComponents/GridOverlay';
 import InputPad from './GridComponents/Input';
 import padContext from '../Context/Pad-context';
-import Solve from '../Buttons/Solve';
+import Start from '../Buttons/Start';
 import Finish from '../Buttons/Finish';
 import puzzleData from '../../Assets/data.json';
-// import fire from '../Login/fire';
-import refreshButton from '../../Assets/refreshPuzzle.svg'
+import GameFunction from '../Buttons/GameFunctions';
 import { useHistory } from 'react-router-dom';
 import { submitScore, Verify } from '../utils/requests';
 import { getFromStorage } from '../utils/localstorage';
@@ -29,8 +28,13 @@ const Game = (props) => {
     const [triggerCheck, setTrigger] = useState({ trigger: false, state: false });
     const [puzzleCorrect, setPuzzleCorrect] = useState(false);
     const [puzzleID, setPuzzleID] = useState('');
-    const [style,setStyle] = useState();
+    const [firstStart, setFirstStart] = useState(true);
     const [unsureMode,setUnsureMode] = useState(false);
+    const puzzleStart = () => {
+        setFirstStart(false)
+        props.gameHandler()
+        PuzzleLoader()
+    }
     const puzzleFinish = () => {
         let temp = 0
         Object.keys(ActivePuzzle).map((Sector, key) => {
@@ -116,20 +120,6 @@ const Game = (props) => {
         }
         SetPuzzle(ReadyPuzz)
     }
-    const puzzleRefresh = () => {
-        PuzzleLoader()
-        props.resetTimer()
-        setStyle({
-            transform: "rotate(360deg)"
-        })
-        setTimeout(()=>{
-            setStyle({
-                transition: 'none',
-                transform: "rotate(0deg)"
-            })
-        },500)
-        
-    }
 
     let GameComponents = (
         <div >
@@ -149,12 +139,6 @@ const Game = (props) => {
     }
     
     useEffect(() => {
-        if (props.gameState) {
-            PuzzleLoader()
-        }
-
-    }, [props.gameState])
-    useEffect(() => {
         if (puzzleCorrect) {
             const obj = getFromStorage('sudoku_react')
             if (obj !== null) {
@@ -170,28 +154,8 @@ const Game = (props) => {
                 history.push('/Complete')
             }
         } 
-        //         fire.auth().onAuthStateChanged(user => {
-        //             if(user != null){
-        //                 return fire.firestore().collection('users-history').doc(user.email)
-
-        //             .get()
-        //             .then((doc)=>{
-        //                 fire.firestore().collection('users-history').doc(user.email)
-        //                 .update({
-        //                     [puzzleID]:parseInt(1000 / props.score),
-        //                     highScore:doc.data().highScore+parseInt(1000 / props.score)
-
-        //             })
-        //         }).then(()=>{
-        //             history.push("/Complete")
-        //         })
-        //     }
-        // else{
-        //     history.push("/Complete")
-        // }})
-
     }, [props.score])
-    let StartFin = <Solve onClick={props.gameHandler} gameState={props.gameState}></Solve>
+    let StartFin = <Start onClick={puzzleStart} gameState={props.gameState}></Start>
     if (props.gameState) {
         StartFin = <Finish
             onClick={puzzleFinish}
@@ -205,7 +169,7 @@ const Game = (props) => {
     return (
         <div className={classes.gamePage} >
             {inputmenu}
-            <img src={refreshButton} onClick={puzzleRefresh} className={classes.refreshButton} style={style}></img>
+            <GameFunction firstStart={firstStart} resetTimer={props.resetTimer} PuzzleLoader={PuzzleLoader} gameState={props.gameState} gameHandler={props.gameHandler}/>
             <div className={classes.GameStyleContainer} >
 
                 <padContext.Provider value={{ showPad: inputPadState.showPad, PadHandler: PadHandler }}>

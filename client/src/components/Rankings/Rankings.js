@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import classes from '../../CSS/Rankings.module.css';
-import fire from '../Login/fire';
 import { retreiveUsers } from '../utils/requests';
 import { getFromStorage} from '../utils/localstorage';
 
@@ -31,16 +30,6 @@ const Rankings = () => {
         .then(res => {
             setRawPlayerData(res.data)
         })
-        // fire.firestore().collection('users-history').get()                       Firebase requesting data
-        //     .then((docs) => {
-        //         docs.forEach(doc => {
-        //             let name = doc.id.split('@')
-        //             rawPlayerData.push([name[0], doc.data().highScore])
-        //         })
-                
-        //         console.log(rawPlayerData)
-        //     });
-
         setTimeout(() => {
             setLoadTemp({ opacity: 1, trans: 0.5 })
         }, 500)

@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from '../../CSS/Main.module.css'
 
-const Solve =(props) =>{
+const Start =(props) =>{
     let BttnText = "START"
     if(props.gameState){
         BttnText = "FINISH"
@@ -12,4 +12,4 @@ const Solve =(props) =>{
         </div>
     )
 }
-export default Solve;
+export default Start;

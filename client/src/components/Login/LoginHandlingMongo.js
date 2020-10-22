@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LoginWindow from './LoginWindow';
-import { Redirect, useHistory } from 'react-router-dom';
-import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 import { getFromStorage, setInStorage } from '../utils/localstorage';
 import { Verify, Signup, Login, Logout } from '../utils/requests';
 const LoginHandlingMongo = () => {
@@ -11,15 +10,9 @@ const LoginHandlingMongo = () => {
     const [passwordConf, setPasswordConf] = useState('');
     const [passwordConfError, setPasswordConfError] = useState('');
     const [receiveError, setReceiveError] = useState('');
-    let history = useHistory();
     let userJSON = {
         username: username,
         password: password
-    }
-
-    const clearInputs = () => {
-        setUsername('');
-        setPassword('');
     }
     const clearErrors = () => {
         setReceiveError('');
