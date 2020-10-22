@@ -10,11 +10,4 @@ const Progress = props => {
     </div>
     )
 }
-// const loadbar =props => {
-    
-    
-//     return(
-//     <Progress complete="50"></Progress>
-//     )
-// }
 export default Progress;

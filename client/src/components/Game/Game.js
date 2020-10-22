@@ -98,7 +98,7 @@ const Game = (props) => {
         let tempcounter = 0
         let RawPuzzle = null;
         let i = Math.floor((Math.random() * 498) + 1)
-        RawPuzzle = puzzleData[i]["puzzle"].toString()
+        RawPuzzle ="974183652651274389283596714129835476746912538835647921568329147317468295492751863" //puzzleData[i]["puzzle"].toString()
         setPuzzleID(RawPuzzle.substring(0, 6))
         let PuzzProcess = RawPuzzle.split("")
         let ReadyPuzz = {
@@ -148,10 +148,16 @@ const Game = (props) => {
                             submitScore({ userId: res.data.userId, score: parseInt(1000 / props.score) })
                         }
                     }).then(() => {
-                        history.push('/Complete')
+                        history.push({
+                            pathname:'/Complete',
+                            state:{score:props.score}
+                        })
                     })
             } else {
-                history.push('/Complete')
+                history.push({
+                    pathname:'/Complete',
+                    state:{score:props.score}
+                })
             }
         } 
     }, [props.score])

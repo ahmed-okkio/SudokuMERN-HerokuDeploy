@@ -70,10 +70,9 @@ const Navbar = props => {
         }, 300)
         setTimeout(() => {
             setloadState({
-                loadprog: 101,
                 opacity: 0
             })
-        }, 1500)
+        }, 1400)
         setTimeout(() => {
             setloadState({
                 loadprog: 0,
