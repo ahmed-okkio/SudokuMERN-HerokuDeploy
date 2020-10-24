@@ -2,6 +2,7 @@
 .HomeContainer{
     display:flex;
     width: 100vw;
+    height: 90%;
     flex-direction: column;
     transition: 0.5s ease-in;
     -webkit-touch-callout: none;
@@ -264,6 +265,15 @@
     color:black;
     font-family: 'Didact Gothic', sans-serif;
     align-self: center;
+}
+.Credit {
+    position: relative !important;
+    color:rgba(83, 83, 83, 0.764);
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Didact Gothic', sans-serif;
+    text-decoration: underline;
 }
 @keyframes color-change {
     0% {color:rgb(223, 49, 170);}

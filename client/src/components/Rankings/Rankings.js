@@ -15,9 +15,15 @@ const Rankings = () => {
             return(
                 playerdata.push(
                 <ul key={key} className={classes.player}>
-                    <li  className={classes.Rank}>{key + 1}</li>
-                    <li className={classes.Name}>{list.username}</li>
-                    <li className={classes.Points}>{list.score}</li>
+                    <ul className={classes.Rank}>
+                        <li>{key + 1}</li>
+                    </ul>
+                    <ul className={classes.Name}>
+                        <li >{list.username}</li>
+                    </ul>
+                    <ul className={classes.Points}>
+                     <li>{list.score}</li>
+                    </ul>
                 </ul>
             )
             )
@@ -49,9 +55,15 @@ const Rankings = () => {
                     <li className={classes.rightsep}></li>
                 </ul>
                 <ul className={classes.headings}>
-                    <li className={classes.rankHeader}>RANK</li>
-                    <li className={classes.nameHeader}>NAME</li>
-                    <li className={classes.pointsHeader}>POINTS</li>
+                    <ul className={classes.rankHeader}>
+                        <li>RANK</li>
+                    </ul>
+                    <ul className={classes.nameHeader}>
+                    <li>NAME</li>
+                    </ul>
+                    <ul className={classes.pointsHeader}>
+                        <li>POINTS</li>
+                    </ul>
                 </ul>
                 {playerDataState}
             </div>

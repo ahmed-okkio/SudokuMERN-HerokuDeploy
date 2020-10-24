@@ -84,36 +84,48 @@
     color:white;
     /* margin-bottom: 10px; */
     font-family: 'Comfortaa', cursive;
-    font-size: 24px;
+    font-size: calc(26px/var(--size-divisor2));
     line-height: 5vh;
     list-style: none;
 }
 .Rank{
+    display:flex;
+    justify-content: center;
     font-size: calc(26px/var(--size-divisor2)) !important;
-    margin-left:4%;
-    margin-right:5%;
+    min-width: calc(70px/var(--size-divisor2));
+    padding:0;
 }
 .Name{
+    display:flex;
+    justify-content: center;
+    min-width:calc(475px/var(--size-divisor2));
     font-size: calc(28px/var(--size-divisor2)) !important;
-    margin-left:auto;
-    margin-right:auto;
+    padding:0;
 }
 .Points{
+    display:flex;
+    justify-content: center;
     font-size: calc(26px/var(--size-divisor2)) !important;
-    margin-left:15%;
-    margin-right:8%;
+    min-width: calc(155px/var(--size-divisor2));
+    padding:0;
 }
 .rankHeader{
-    margin-left:1%;
-    margin-right:0;
+    display:flex;
+    justify-content: center;
+    min-width: calc(70px/var(--size-divisor2));
+    padding:0;
 }
 .nameHeader{
-    margin-left:25%;
-    margin-right:0;
+    display:flex;
+    justify-content: center;
+    min-width:calc(475px/var(--size-divisor2));
+    padding:0;
 }
 .pointsHeader{
-    margin-left:38%;
-    margin-right:0;
+    display:flex;
+    justify-content: center;
+    min-width:calc(155px/var(--size-divisor2));
+    padding:0;
 }
 @media(min-width: 190px){
     :root{

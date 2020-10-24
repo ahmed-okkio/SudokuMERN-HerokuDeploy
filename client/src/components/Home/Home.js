@@ -33,9 +33,9 @@ const Home = () => {
                     <p className={classes.Three}>3</p>
                     <p className={classes.Four}>4</p>
                 </div>
-                <a href="https://trello.com/b/nsFIjztS/sudoku-mern" target="_blank">Finished and upcoming changes</a>
+                
             </div>
-            
+            <p className={classes.Credit}>This project was created by Ahmed "Okkio" Hamad</p>
         </div>
         
     </>
