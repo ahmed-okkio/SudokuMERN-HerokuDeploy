@@ -13,8 +13,6 @@ const Rankings = () => {
         let a = 0 + page
         let b = 15 + page
         let temp = rawPlayerData
-        console.log(a)
-        temp.sort((a, b) => (a.score < b.score ? 1 : -1))
         temp.slice(a , b).map((list, key) => {
             return(
                 playerdata.push(
@@ -38,7 +36,6 @@ const Rankings = () => {
     const nextPage = () => {
         let temp = page+15
         setPage(temp)
-        console.log(page)
     }
     const prevPage = () => {
         let temp = page
@@ -47,7 +44,7 @@ const Rankings = () => {
     useEffect(() => {
         retreiveUsers()
         .then(res => {
-            setRawPlayerData(res.data)
+            setRawPlayerData(res.data.sort((a, b) => (a.score < b.score ? 1 : -1)))
         })
         setTimeout(() => {
             setLoadTemp({ opacity: 1, trans: 0.5 })
