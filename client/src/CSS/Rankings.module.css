@@ -127,6 +127,25 @@
     min-width:calc(155px/var(--size-divisor2));
     padding:0;
 }
+.NextButton {
+    margin-top:auto;
+    margin-right:9%;
+    width:calc(25px/var(--size-divisor2));
+    margin-bottom: 1.5%;
+    padding:0;
+    align-self: flex-end;
+    cursor: pointer;
+}
+.PrevButton {
+    margin-top:auto;
+    margin-left:3%;
+    width:calc(25px/var(--size-divisor2));
+    margin-bottom: 1.5%;
+    padding:0;
+    align-self: flex-start;
+    transform: rotate(180deg);
+    cursor: pointer;
+}
 @media(min-width: 190px){
     :root{
         --size-divisor2:2.2

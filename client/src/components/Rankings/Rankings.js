@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import classes from '../../CSS/Rankings.module.css';
 import { retreiveUsers } from '../utils/requests';
-import { getFromStorage} from '../utils/localstorage';
+import button from '../../Assets/next-prev.svg'
 
 const Rankings = () => {
     let playerdata = [];
     const [rawPlayerData, setRawPlayerData] = useState([])
     const [playerDataState, setPlayerDataState] = useState()
+    const [page, setPage] = useState(0);
     const [LoadTemp, setLoadTemp] = useState({ opacity: 0, trans: 0.5 })
     const displayScores = () => {
-        let temp = rawPlayerData;
+        let a = 0 + page
+        let b = 16 + page
+        let temp = rawPlayerData
+        console.log(a)
         temp.sort((a, b) => (a.score < b.score ? 1 : -1))
-        temp.map((list, key) => {
+        temp.slice(a , b).map((list, key) => {
             return(
                 playerdata.push(
                 <ul key={key} className={classes.player}>
@@ -31,6 +35,15 @@ const Rankings = () => {
         })
         setPlayerDataState(playerdata)
     }
+    const nextPage = () => {
+        let temp = page+16
+        setPage(temp)
+        console.log(page)
+    }
+    const prevPage = () => {
+        let temp = page
+        setPage(temp-16)
+    }
     useEffect(() => {
         retreiveUsers()
         .then(res => {
@@ -46,7 +59,7 @@ const Rankings = () => {
     }, [])
     useEffect(() => {
         displayScores()
-    }, [rawPlayerData])
+    }, [rawPlayerData,page])
     return (
         <div className={classes.rankings} style={{ opacity: `${LoadTemp.opacity}`, transition: `${LoadTemp.trans}s` }}>
             <div className={classes.board}>
@@ -66,6 +79,12 @@ const Rankings = () => {
                     </ul>
                 </ul>
                 {playerDataState}
+                {rawPlayerData[page+16]?
+                <img src={button} onClick={nextPage} className={classes.NextButton}></img>
+                : null}
+                {page > 0?
+                 <img src={button} onClick={prevPage} className={classes.PrevButton}></img>
+                : null}
             </div>
         </div>
     )
