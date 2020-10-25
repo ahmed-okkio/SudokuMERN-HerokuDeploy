@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+/* @font-face{
+    font-family: "Didact Gothic";
+    src:
+    local("Didact Gothic")
+} */
 .completeContainer{
     padding: 0;
     margin: 0;
     width:100%;
-    height:100%;
+    height: 100%;
     display:flex;
     flex-direction: column;
     -webkit-touch-callout: none;
@@ -17,19 +23,29 @@
 }
 .puzzleComplete{
     transition: 1s ease-in-out;
-    margin-top:5vh;
+    margin-top:0vh;
+    white-space: nowrap;
     align-self: center;
-    font-size:10vw;
+    font-size:calc(122px/var(--size-divisor2));
     font-weight: bold;
     color: rgb(0, 195, 255);
     font-family: 'Didact Gothic', sans-serif;
 }
 .Score{
+    /* transition: 0.8s ease-in-out; */
     margin-top:10vh;
     margin-bottom: 0;
     align-self: center;
-    font-size:8vw;
-    font-weight: bold;
+    font-size:calc(150px/var(--size-divisor2));
+    color: rgb(66, 66, 66);
+    font-family: 'Questrial', sans-serif;
+    padding-right: calc(70px/var(--size-divisor2));
+}
+.Time{
+    margin-top:5vh;
+    margin-bottom: 0;
+    align-self: center;
+    font-size:calc(100px/var(--size-divisor2));
     color: rgb(0, 195, 255);
     font-family: 'Didact Gothic', sans-serif;
     animation: color-change 3s 0s infinite;

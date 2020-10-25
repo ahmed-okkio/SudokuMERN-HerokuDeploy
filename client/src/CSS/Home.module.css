@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 .HomeContainer{
     display:flex;
     width: 100vw;
-    height: 90%;
+    height: 100vh;
     flex-direction: column;
     transition: 0.5s ease-in;
     -webkit-touch-callout: none;
