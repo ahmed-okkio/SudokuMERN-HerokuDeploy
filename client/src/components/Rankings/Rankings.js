@@ -11,7 +11,7 @@ const Rankings = () => {
     const [LoadTemp, setLoadTemp] = useState({ opacity: 0, trans: 0.5 })
     const displayScores = () => {
         let a = 0 + page
-        let b = 16 + page
+        let b = 15 + page
         let temp = rawPlayerData
         console.log(a)
         temp.sort((a, b) => (a.score < b.score ? 1 : -1))
@@ -20,7 +20,7 @@ const Rankings = () => {
                 playerdata.push(
                 <ul key={key} className={classes.player}>
                     <ul className={classes.Rank}>
-                        <li>{key + 1}</li>
+                        <li>{key + 1 + page}</li>
                     </ul>
                     <ul className={classes.Name}>
                         <li >{list.username}</li>
@@ -36,13 +36,13 @@ const Rankings = () => {
         setPlayerDataState(playerdata)
     }
     const nextPage = () => {
-        let temp = page+16
+        let temp = page+15
         setPage(temp)
         console.log(page)
     }
     const prevPage = () => {
         let temp = page
-        setPage(temp-16)
+        setPage(temp-15)
     }
     useEffect(() => {
         retreiveUsers()
@@ -79,7 +79,7 @@ const Rankings = () => {
                     </ul>
                 </ul>
                 {playerDataState}
-                {rawPlayerData[page+16]?
+                {rawPlayerData[page+15]?
                 <img src={button} onClick={nextPage} className={classes.NextButton}></img>
                 : null}
                 {page > 0?

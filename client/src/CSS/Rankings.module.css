@@ -128,23 +128,31 @@
     padding:0;
 }
 .NextButton {
+    transition: 50ms ease-in-out;
     margin-top:auto;
     margin-right:9%;
     width:calc(25px/var(--size-divisor2));
-    margin-bottom: 1.5%;
+    margin-bottom: 3%;
     padding:0;
     align-self: flex-end;
     cursor: pointer;
 }
+.NextButton:active{
+    width:calc(22px/var(--size-divisor2));
+}
 .PrevButton {
+    transition: 50ms ease-in-out;
     margin-top:auto;
     margin-left:3%;
     width:calc(25px/var(--size-divisor2));
-    margin-bottom: 1.5%;
+    margin-bottom: 3%;
     padding:0;
     align-self: flex-start;
     transform: rotate(180deg);
     cursor: pointer;
+}
+.PrevButton:active{
+    width:calc(22px/var(--size-divisor2));
 }
 @media(min-width: 190px){
     :root{
