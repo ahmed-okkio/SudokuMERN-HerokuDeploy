@@ -31,9 +31,13 @@ const Game = (props) => {
     const [firstStart, setFirstStart] = useState(true);
     const [unsureMode,setUnsureMode] = useState(false);
     const puzzleStart = () => {
+        if(firstStart) {
         setFirstStart(false)
         props.gameHandler()
         PuzzleLoader()
+        } else {
+            props.gameHandler()
+        }
     }
     const puzzleFinish = () => {
         let temp = 0
