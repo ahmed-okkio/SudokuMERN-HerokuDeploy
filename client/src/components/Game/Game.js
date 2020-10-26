@@ -154,14 +154,16 @@ const Game = (props) => {
                     }).then(() => {
                         history.push({
                             pathname:'/Complete',
-                            state:{score:props.score}
+                            state:{
+                                time: props.score,
+                                score: parseInt(1000 / props.score)}
                         })
                     })
             } else {
                 history.push({
                     pathname:'/Complete',
                     state:{
-                        time:props.score,
+                        time: props.score,
                         score: parseInt(1000 / props.score)}
                 })
             }
