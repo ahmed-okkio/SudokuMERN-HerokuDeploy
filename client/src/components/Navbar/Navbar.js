@@ -17,12 +17,11 @@ const Navbar = props => {
     const [burgerState, setBurgerState] = useState('');             // Holds state responsible for displaying Burger icon on mobile navbar
     const [navHeightState, setNavHeightState] = useState('');       // Holds state responsible for expanding nav bar height down on burger button press
     const [navOpacityState, setNavOpacityState] = useState();
-    const [navPositionState, setNavPositionState] = useState('');
     const toggleBurger = () => {                                    // Toggle for pressing burger button -> reveals nav buttons
         if (burgerState == '' || burgerState == 'none') {
             setNavHeightState(220)
             setBurgerState('flex')
-            setNavPositionState('fixed')
+
             setTimeout(() => {
                 setNavOpacityState(1)
             }, 200)
@@ -136,7 +135,7 @@ const Navbar = props => {
     }, [])
     return (
         <div className={classes.NavBarContainer}>
-            <nav className={classes.NavbarBody} style={{ position: `${navPositionState}`,height: `${navHeightState}px` }}>
+            <nav className={classes.NavbarBody} style={{ height: `${navHeightState}px` }}>
                 <span className={classes.toggleBurger} onClick={toggleBurger}>
                     <span className={classes.bar} />
                     <span className={classes.bar} />
