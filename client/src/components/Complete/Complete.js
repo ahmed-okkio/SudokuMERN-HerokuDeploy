@@ -27,7 +27,7 @@ const Complete = (props) => {
             if(props.location.state.score !== undefined){
                 Score =  props.location.state.score
             }
-            Time ="0.359" //props.location.state.time.toString()
+            Time = props.location.state.time.toString()
             let temp = Time.slice(0,1)+Time.slice(2,3)
             let temp1 = Time.slice(3,5)
             Time = temp+":"+temp1
