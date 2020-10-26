@@ -1,7 +1,6 @@
 .HomeContainer{
     display:flex;
     width: 100vw;
-    height: 100vh;
     flex-direction: column;
     transition: 0.5s ease-in;
     -webkit-touch-callout: none;
