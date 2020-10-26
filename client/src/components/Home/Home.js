@@ -5,18 +5,9 @@ import classes from '../../CSS/Home.module.css'
 
 
 const Home = () => {
-    const[LoadTemp,setLoadTemp]=useState({opacity:0})
-    useEffect(()=>{
-        setTimeout(()=>{
-            setLoadTemp({opacity:1,})
-        },500)
-        setTimeout(()=>{
-            setLoadTemp({trans:"none"})
-        },1000)
-    },[])
     return(
         <>
-        <div className={classes.HomeContainer}style={{opacity:`${LoadTemp.opacity}`,transition:LoadTemp.trans}}>
+        <div className={classes.HomeContainer}>
             <NavLink to='/Game'className={classes.playBackground}>
                 <h1>Play</h1>
             </NavLink>

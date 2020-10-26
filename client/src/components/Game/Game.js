@@ -102,7 +102,7 @@ const Game = (props) => {
         let tempcounter = 0
         let RawPuzzle = null;
         let i = Math.floor((Math.random() * 498) + 1)
-        RawPuzzle = puzzleData[i]["puzzle"].toString()
+        RawPuzzle = puzzleData[i]["solutions"].toString()
         setPuzzleID(RawPuzzle.substring(0, 6))
         let PuzzProcess = RawPuzzle.split("")
         let ReadyPuzz = {
@@ -146,25 +146,34 @@ const Game = (props) => {
         if (puzzleCorrect) {
             const obj = getFromStorage('sudoku_react')
             if (obj !== null) {
+
                 Verify(obj.token)
                     .then(res => {
                         if (res.data.success) {
                             submitScore({ userId: res.data.userId, score: parseInt(1000 / props.score) })
+                            .then(() => {
+                                history.push({
+                                    pathname:'/Complete',
+                                    state:{
+                                        time: props.score,
+                                        score: parseInt(1000 / props.score)}
+                                })
+                            })
+                        } else {
+                            history.push({
+                                pathname:'/Complete',
+                                state:{
+                                    time: props.score
+                                    }
+                            })
                         }
-                    }).then(() => {
-                        history.push({
-                            pathname:'/Complete',
-                            state:{
-                                time: props.score,
-                                score: parseInt(1000 / props.score)}
-                        })
                     })
             } else {
                 history.push({
                     pathname:'/Complete',
                     state:{
-                        time: props.score,
-                        score: parseInt(1000 / props.score)}
+                        time: props.score
+                        }
                 })
             }
         } 

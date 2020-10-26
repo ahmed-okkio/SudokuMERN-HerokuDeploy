@@ -3,6 +3,8 @@
 .App{
     transition:0.3s ease-in-out;
     opacity:0;
+    height:auto;
+    margin-top:6%;
     width:100%;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -13,14 +15,23 @@
     user-drag: none; 
     -webkit-user-drag: none;
 }
+.NavBarContainer{
+    display:flex;
+    overflow: hidden;
+    top:0;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
 .NavbarBody{
     display: flex;
+    height:6%;
     flex-direction: row;
     background-color: #2b3137;
     width: 100%;
     transition: 300ms ease;   
     z-index: 10;
-    
 }
 .toggleBurger{
     position: absolute;
@@ -96,10 +107,8 @@
 }
 .progress{
     background-color: #ffffff;
-	position: relative;
 	height: 4px;
 	width: 100%;
-
 }
 .progresscomplete{
     background: linear-gradient(to left, #51d3a4, rgb(4, 221, 149));
@@ -183,7 +192,7 @@ body{
     }
     .NavbarBody{
         flex-direction: column;
-        height: 60px;
+        height: 6%;
     }
     .NavButtonLogin{
         transition: 400ms ease; 
@@ -194,5 +203,8 @@ body{
         margin-right:2em;
         align-content: flex-end;
         width:100%;
+    }
+    .App{
+        margin-top:60px
     }
 }

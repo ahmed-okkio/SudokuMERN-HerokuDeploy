@@ -17,11 +17,12 @@ const Navbar = props => {
     const [burgerState, setBurgerState] = useState('');             // Holds state responsible for displaying Burger icon on mobile navbar
     const [navHeightState, setNavHeightState] = useState('');       // Holds state responsible for expanding nav bar height down on burger button press
     const [navOpacityState, setNavOpacityState] = useState();
+    const [navPositionState, setNavPositionState] = useState('');
     const toggleBurger = () => {                                    // Toggle for pressing burger button -> reveals nav buttons
         if (burgerState == '' || burgerState == 'none') {
             setNavHeightState(220)
             setBurgerState('flex')
-
+            setNavPositionState('fixed')
             setTimeout(() => {
                 setNavOpacityState(1)
             }, 200)
@@ -134,8 +135,13 @@ const Navbar = props => {
         LoadPage(); 
     }, [])
     return (
-        <>
-            <nav className={classes.NavbarBody} style={{ height: `${navHeightState}px` }}>
+        <div className={classes.NavBarContainer}>
+            <nav className={classes.NavbarBody} style={{ position: `${navPositionState}`,height: `${navHeightState}px` }}>
+                <span className={classes.toggleBurger} onClick={toggleBurger}>
+                    <span className={classes.bar} />
+                    <span className={classes.bar} />
+                    <span className={classes.bar} />
+                </span>
                 <NavLink className={classes.LogoLink}to="/" onClick={LoadPage}><img className={classes.Logo} src={Logo} alt="Logo"></img></NavLink>
                 <ul className={classes.NavButtons} style={{ display: `${burgerState}`, opacity: `${navOpacityState}` }}>
                     <li className={classes.NavButton}>
@@ -153,15 +159,10 @@ const Navbar = props => {
                             <li className={classes.NavButton}>
                                 <NavLink onClick={LoadPage} to="/Login">LOGIN</NavLink></li>
                         )}
-                </ul>
-                    <span className={classes.toggleBurger} onClick={toggleBurger}>
-                        <span className={classes.bar} />
-                        <span className={classes.bar} />
-                        <span className={classes.bar} />
-                    </span>
+                </ul>                
             </nav>
             <Progress opacity={loadState.opacity} complete={loadState.loadprog} loadbar={loadState.loadprog} />
-        </>
+        </div>
     )
 };
 export default Navbar;

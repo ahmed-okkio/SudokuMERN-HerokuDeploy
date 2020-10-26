@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import classes from '../../CSS/Login.module.css';
 
 const LoginWindow = (props) => {
-    const [LoadTemp, setLoadTemp] = useState({ opacity: 0, margin: 1 })
+    const [LoadTemp, setLoadTemp] = useState({ opacity: 0 })
     const [signup, setsignup] = useState({ signup: false })
     const {
         username,
@@ -16,9 +16,9 @@ const LoginWindow = (props) => {
         passwordConfError
     } = props;
     const Signup = () => {
-        setLoadTemp({ opacity: 0, margin: 1 })
+        setLoadTemp({ opacity: 0 })
         setTimeout(() => {
-            setLoadTemp({ opacity: 1, margin: 0 })
+            setLoadTemp({ opacity: 1})
             let temp = signup.signup
             setsignup({ signup: !temp })
         }, 300)
@@ -78,11 +78,12 @@ const LoginWindow = (props) => {
 
     useEffect(() => {
         setTimeout(() => {
-            setLoadTemp({ opacity: 1, margin: 0 })
+            setLoadTemp({ opacity: 1 })
         }, 500)
+        
     }, [])
     return (
-        <div className={classes.login} style={{ opacity: `${LoadTemp.opacity}`, marginTop: `${LoadTemp.margin}em` }}>
+        <div className={classes.login} style={{ opacity: `${LoadTemp.opacity}` }}>
             <div className={classes.loginContainer}>
 
                 <label>Sudoku React</label>

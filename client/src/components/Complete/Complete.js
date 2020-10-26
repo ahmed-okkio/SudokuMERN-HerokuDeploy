@@ -24,8 +24,10 @@ const Complete = (props) => {
         let Score = null
         let Time = null
         if(props.location.state !== undefined){
-            Score = props.location.state.score
-            Time = props.location.state.time.toString()
+            if(props.location.state.score !== undefined){
+                Score =  props.location.state.score
+            }
+            Time ="0.359" //props.location.state.time.toString()
             let temp = Time.slice(0,1)+Time.slice(2,3)
             let temp1 = Time.slice(3,5)
             Time = temp+":"+temp1
@@ -41,19 +43,21 @@ const Complete = (props) => {
     return (
         <div className={classes.completeContainer}
         ref={confettiRef}>
-        <Confetti
-        recycle={show}
-        numberOfPieces={80}
-        width={width}
-        height={height}/>
+            <Confetti
+            recycle={show}
+            numberOfPieces={80}
+            width={width}
+            height={height}/>
             <label className={classes.Time}>{timeState}</label>         
             <label className={classes.puzzleComplete}>Puzzle Solved!</label>
+            {   scoreState?
             <AnimatedScore
                 value={scoreState}
                 formatValue={n=>"+" + n.toFixed(0)}
                 className={classes.Score}
-                duration={800}
-            />
+                duration={800}/>
+                : null  }
+            
             {/* <p>Check your score in the Rankings page</p> */}
         </div>
     )

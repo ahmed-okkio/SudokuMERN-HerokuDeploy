@@ -1,6 +1,6 @@
 .HomeContainer{
     display:flex;
-    width: 100vw;
+    width: 100%;
     flex-direction: column;
     transition: 0.5s ease-in;
     -webkit-touch-callout: none;
@@ -81,7 +81,7 @@
     padding-left: calc(15px/ var(--size-divisorhome));
     font-size: calc(82px/ var(--size-divisorhome));
     color: rgb(223, 49, 170);
-    z-index: 10;
+    z-index: 9;
     animation: color-change 5s 0s infinite;
 }
 .svgContainer .Do{
@@ -90,7 +90,7 @@
     margin-top: calc(-110px/ var(--size-divisorhome));
     font-size: calc(88px/ var(--size-divisorhome));
     color: rgb(0, 240, 188);
-    z-index: 10;
+    z-index: 9;
     animation: color-change 5s 0s infinite;
 }
 .svgContainer .Ku{
@@ -100,7 +100,7 @@
     align-self: flex-end;
     font-size: calc(82px/ var(--size-divisorhome));
     color: rgb(0, 183, 255);
-    z-index: 10;
+    z-index: 9;
     animation: color-change 5s 0s infinite;
 }
 .svgContainer .One{
@@ -109,7 +109,7 @@
     margin-top: calc(-280px/ var(--size-divisorhome));
     font-size: calc(82px/ var(--size-divisorhome));
     color: white;
-    z-index: 10;
+    z-index: 9;
 }
 .svgContainer .Five{
     margin:0;
@@ -119,7 +119,7 @@
     margin-top: calc(235px/ var(--size-divisorhome));
     font-size: calc(88px/ var(--size-divisorhome));
     color: white;
-    z-index: 10;
+    z-index: 9;
 }
 .svgContainer .Nine{
     margin:0;
@@ -128,7 +128,7 @@
     margin-top: calc(-115px/ var(--size-divisorhome));
     font-size: calc(88px/ var(--size-divisorhome));
     color: white;
-    z-index: 10;
+    z-index: 9;
 }
 .svgContainer .Three{
     margin:0;
@@ -137,7 +137,7 @@
     margin-top: calc(-115px/ var(--size-divisorhome));
     font-size: calc(88px/ var(--size-divisorhome));
     color: white;
-    z-index: 10;
+    z-index: 9;
 }
 .svgContainer .Eight{
     margin:0;
@@ -146,7 +146,7 @@
     margin-top: calc(-115px/ var(--size-divisorhome));
     font-size: calc(88px/ var(--size-divisorhome));
     color: white;
-    z-index: 10;
+    z-index: 9;
 }
 .svgContainer .Four{
     margin:0;
@@ -156,7 +156,7 @@
     margin-top: calc(-115px/ var(--size-divisorhome));
     font-size: calc(88px/ var(--size-divisorhome));
     color: white;
-    z-index: 10;
+    z-index: 9;
 }
 .ninesquares{
     opacity:0.75;
