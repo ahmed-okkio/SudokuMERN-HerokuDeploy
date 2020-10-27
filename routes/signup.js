@@ -12,6 +12,13 @@ router.route('/signup').post((req, res) => {
             message: 'Error: Username cannot be blank '
         })
     }
+    if(username.length > 12){
+        
+        return res.send({
+            success: false,
+            message: 'Error: Username too long '
+        })
+    }
     if(!password){
         return res.send({
             success: false,
