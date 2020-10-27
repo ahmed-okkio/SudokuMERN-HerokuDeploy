@@ -29,7 +29,6 @@ const Game = (props) => {
     const [puzzleCorrect, setPuzzleCorrect] = useState(false);
     const [puzzleID, setPuzzleID] = useState('');
     const [firstStart, setFirstStart] = useState(true);
-    const [unsureMode,setUnsureMode] = useState(false);
     const puzzleStart = () => {
         if(firstStart) {
         setFirstStart(false)
@@ -57,7 +56,7 @@ const Game = (props) => {
             state: true
         })
     }
-    const PadHandler = (event, stat, Sector, index) => {
+    const PadHandler = (event, stat, Sector, index,inputValue) => {
         if(stat == "static"){
         } else {
             if (inputPadState.showPad) {
@@ -70,7 +69,8 @@ const Game = (props) => {
                 Xcoords: event.clientX,
                 Ycoords: event.clientY,
                 cellindex: index,
-                Sector: Sector
+                Sector: Sector,
+                inputValue: inputValue
             })
      }
         
@@ -138,7 +138,7 @@ const Game = (props) => {
     let inputmenu = null;
     if (inputPadState.showPad) {
         inputmenu = (
-            <InputPad InputHandler={InputHandler} unsureMode={unsureMode} setUnsureMode={setUnsureMode} togglePad={togglePad} Ycoords={inputPadState.Ycoords} Xcoords={inputPadState.Xcoords} />
+            <InputPad InputHandler={InputHandler} inputValue={inputPadState.inputValue} togglePad={togglePad} Ycoords={inputPadState.Ycoords} Xcoords={inputPadState.Xcoords} />
         );
     }
     

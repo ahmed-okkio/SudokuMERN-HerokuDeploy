@@ -8,18 +8,11 @@ const InputPad = (props) => {
         left: props.Xcoords,
         opacity: 1
     }
-    const unsureModeHandler = () => {
-        const tempstate = props.unsureMode
-        props.setUnsureMode(!tempstate)
-    }
-    const inputHandler = (input) => {
+    const unsureInputHandler = (input) => {
         let unsureInput = null
-        if (props.unsureMode) {
-            unsureInput = input.toString() + "U"
-            props.InputHandler(unsureInput)
-        } else {
-            props.InputHandler(input)
-        }
+        unsureInput = input.toString() + "U"
+        props.InputHandler(unsureInput)
+
     }
     if (props.Xcoords < 80) {
         style.left += 75
@@ -27,20 +20,13 @@ const InputPad = (props) => {
     } else if ((window.screen.availWidth - props.Xcoords) < 80) {
         style.left -= 75
     }
-    let unsureModeIndicator = {}
-    if(props.unsureMode) {
-        unsureModeIndicator = {
-            opacity: 0.8,
-            backgroundColor: "#FDC12A"
-        } // Sets unsure button opacity and color
-    }
 
     const keyPads = []
 
     for (let num = 1; num < 10; num++) {
 
         keyPads.push(
-            <li onClick={() => { inputHandler(num) }} key={num}>{num}</li>
+            <li onClick={() => { props.InputHandler(num) }} key={num}>{num}</li>
         )
 
     }
@@ -57,8 +43,8 @@ const InputPad = (props) => {
                 {keyPads}
             </ul>
             <ul className={classes.padutils}>
-                <li onClick={() => { inputHandler(0) }}><img src={erasersvg} /></li>
-                <li onClick={unsureModeHandler} style={{opacity:unsureModeIndicator.opacity, backgroundColor: unsureModeIndicator.backgroundColor}}><img src={pencilsvg} /></li>
+                <li onClick={() => { props.InputHandler(0) }}><img src={erasersvg} /></li>
+                <li onClick={() => {unsureInputHandler(props.inputValue)}}><img src={pencilsvg} /></li>
             </ul>
         </div>
     )
