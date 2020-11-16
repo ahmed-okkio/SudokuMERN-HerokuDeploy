@@ -43,7 +43,7 @@ const Timer = forwardRef((props, ref) =>{
      });
     useEffect(()=>{
         if(!props.gameState){
-            props.scoreGrab(parseFloat(timermin+timersec)/1000)
+            props.scoreGrab(parseFloat(timermin+timersec)/1000,timermin+timersec)
         }
     },[props.gameState])
      

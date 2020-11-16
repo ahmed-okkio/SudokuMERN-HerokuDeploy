@@ -11,8 +11,11 @@ const GameContainer = () =>{
         let tempstate = gameState.gameState
         setgameState({gameState:!tempstate})
      }
-    const scoreGrab = (score)=>{
-        setScore({score:score})
+    const scoreGrab = (score,time)=>{
+        setScore({
+            score:score,
+            time:time
+        })
     }
     const resetTimerRef = useRef();
     return(
@@ -22,6 +25,7 @@ const GameContainer = () =>{
                 gameState={gameState.gameState}
                 gameHandler={gameHandler}
                 score={pushScore.score}
+                time={pushScore.time}
                 resetTimer={() =>resetTimerRef.current.resetTimer()}/>
         </>
     )

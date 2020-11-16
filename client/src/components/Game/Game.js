@@ -155,15 +155,17 @@ const Game = (props) => {
                                 history.push({
                                     pathname:'/Complete',
                                     state:{
-                                        time: props.score,
-                                        score: parseInt(1000 / props.score)}
+                                        score:props.score,
+                                         time: props.time
+                                    }
                                 })
                             })
                         } else {
                             history.push({
                                 pathname:'/Complete',
                                 state:{
-                                    time: props.score
+                                    score:props.score,
+                                    time: props.time
                                     }
                             })
                         }
@@ -172,7 +174,8 @@ const Game = (props) => {
                 history.push({
                     pathname:'/Complete',
                     state:{
-                        time: props.score
+                        score:props.score,
+                        time: props.time
                         }
                 })
             }

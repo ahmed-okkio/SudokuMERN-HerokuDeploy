@@ -21,15 +21,17 @@ const Complete = (props) => {
         setTimeout(()=>{
             handleShow(false)
         },5000)
-        let Score = null
+        let Score = 0
         let Time = null
+        console.log(props.location.state)
         if(props.location.state !== undefined){
-            if(props.location.state.score !== undefined){
-                Score =  props.location.state.score
+            if(props.location.state.time !== undefined){
+                Score =  1000/props.location.state.score
             }
-            Time = props.location.state.time.toString()
-            let temp = Time.slice(0,1)+Time.slice(2,3)
-            let temp1 = Time.slice(3,5)
+            
+            Time = props.location.state.time
+            let temp = Time.slice(0,2)
+            let temp1 = Time.slice(2,4)
             Time = temp+":"+temp1
             setTimeState(Time)
             setScoreState(Score)

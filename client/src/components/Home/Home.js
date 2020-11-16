@@ -5,6 +5,7 @@ import classes from '../../CSS/Home.module.css'
 
 
 const Home = () => {
+    console.log(parseFloat("13"+"40")/1000)
     return(
         <>
         <div className={classes.HomeContainer}>
