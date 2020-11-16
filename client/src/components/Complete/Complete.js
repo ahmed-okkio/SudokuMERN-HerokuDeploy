@@ -23,7 +23,6 @@ const Complete = (props) => {
         },5000)
         let Score = 0
         let Time = null
-        console.log(props.location.state)
         if(props.location.state !== undefined){
             if(props.location.state.time !== undefined){
                 Score =  1000/props.location.state.score
